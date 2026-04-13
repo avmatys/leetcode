@@ -22,10 +22,10 @@ class Solution {
             } else {
                 prev[diff] = i;
             }
-            if (diff - 2 > 0 && prev[diff - 2] != Integer.MAX_VALUE && has_zero[i + 1]) {
+            if (diff > n && prev[diff - 2] != Integer.MAX_VALUE && has_zero[i + 1]) {
                 result = Math.max(result, i - prev[diff - 2]);
             }
-            if (diff + 2 < prev.length && prev[diff + 2] != Integer.MAX_VALUE && has_ones[i + 1]) {
+            if (diff < n && prev[diff + 2] != Integer.MAX_VALUE && has_ones[i + 1]) {
                 result = Math.max(result, i - prev[diff + 2]);
             }
         }
